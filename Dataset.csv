@@ -1,0 +1,6 @@
+Sr.No.,Vehicle Number,Owner Name,Vehicle Type,Entry Toll,Exit Toll,Distance (km),Toll Rate (per km),Entry Time,Exit Time
+1,KA01AB1234,John Doe,Car,Toll_A,Toll_B,5,1.73,01-01-2025 08:00,01-01-2025 08:30
+2,TN09CD5678,Jeetu  Nair,Truck,Toll_B,Toll_D,10,5.85,01-01-2025 09:00,01-01-2025 09:45
+3,MH04EF9012,Rajesh Kumar,Bike,Toll_C,"	Toll_A",115,1.73,01-01-2025 10:10,01-01-2025 10:30
+4,DL12GH3456,Akash Mehta,Car,Toll_A,"	Toll_C",220,1.73,01-01-2025 11:00,01-01-2025 11:40
+5,PB03KL2345,Anil Sharma,Truck,Toll_B,Toll_D,650,5.85,01-01-2025 12:00,01-01-2025 12:50
