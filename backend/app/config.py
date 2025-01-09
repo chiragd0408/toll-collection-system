@@ -1,16 +1,26 @@
-import os 
- 
-class Config: 
-    SECRET_KEY = os.getenv('SECRET_KEY', 'your_default_secret_key') 
-    SQLALCHEMY_TRACK_MODIFICATIONS = False 
-    SQLALCHEMY_ECHO = False  # Set to True to log SQL queries 
- 
-    MYSQL_USER = os.getenv('MYSQL_USER', 'your_username') 
-    MYSQL_PASSWORD = os.getenv('MYSQL_PASSWORD', 'your_password') 
-    MYSQL_HOST = os.getenv('MYSQL_HOST', 'localhost') 
-    MYSQL_DB = os.getenv('MYSQL_DB', 'toll_system_db') 
- 
-    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://:@/" 
- 
-    ANPR_API_KEY = os.getenv('ANPR_API_KEY', 'your_anpr_api_key') 
-    PAYMENT_GATEWAY_API_KEY = os.getenv('PAYMENT_GATEWAY_API_KEY', 'your_payment_gateway_api_key') 
+import os
+
+class Config:
+    # Base configuration class
+    SECRET_KEY = 'your_secret_key'
+    DEBUG = True
+
+    # Configure database URI (for SQLite)
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///toll_collection.db'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False  # Disable the modification tracking
+
+
+    # Add any other configurations, such as database or logging configurations
+    # DATABASE_URI = 'sqlite:///yourdatabase.db'
+    # LOGGING_LEVEL = 'DEBUG'
+
+class ProductionConfig(Config):
+    # Production settings (e.g., for deployment)
+    DEBUG = False
+    SECRET_KEY = os.environ.get('SECRET_KEY', 'your_production_secret_key')
+
+class DevelopmentConfig(Config):
+    # Development-specific settings
+    DEBUG = True
+    SECRET_KEY = 'your_development_secret_key'
+

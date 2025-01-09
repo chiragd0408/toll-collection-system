@@ -1,21 +1,16 @@
-from flask import Flask 
-from .config import Config 
-from .models import db 
- 
-def create_app(): 
- 
-    app = Flask(__name__) 
-    app.config.from_object(Config) 
- 
-    db.init_app(app) 
- 
-    # Register blueprints (routes) 
-    from .routes.toll_routes import toll_bp 
-    from .routes.user_routes import user_bp 
-    from .routes.payment_routes import payment_bp 
- 
-    app.register_blueprint(toll_bp, url_prefix='/toll') 
-    app.register_blueprint(user_bp, url_prefix='/user') 
-    app.register_blueprint(payment_bp, url_prefix='/payment') 
- 
-    return app 
+from flask import Flask
+from .routes import toll_routes  # Assuming your routes are in a separate module
+
+def create_app():
+    # Initialize the Flask app
+    app = Flask(__name__)
+
+    # Configure your app (e.g., setting up a secret key, database URI, etc.)
+    app.config['SECRET_KEY'] = 'your_secret_key'
+
+    # Register blueprints (if using blueprints for better modularization)
+    app.register_blueprint(toll_routes)
+
+    # You can add more app initialization logic here if needed, such as setting up logging or database connections
+
+    return app
