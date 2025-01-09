@@ -24,4 +24,3 @@ class DevelopmentConfig(Config):
     DEBUG = True
     SECRET_KEY = 'your_development_secret_key'
 
-# The configuration can be selected based on environment variables or other conditions
