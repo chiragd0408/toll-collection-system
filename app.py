@@ -25,11 +25,8 @@ def calculate_toll():
     toll_info = toll_points[toll_road_id]
     toll_rate = toll_info['rate']
 
-<<<<<<< HEAD
-   
-=======
-
->>>>>>> 3f7f691146552956c55a62e57bbf6a24821dfc3d
+    # Calculate toll here based on distance or logic as needed
+    # For now, just return the rate
     return jsonify({
         'toll_road_id': toll_road_id,
         'location': toll_info['location'],
