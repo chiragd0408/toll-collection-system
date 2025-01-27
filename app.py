@@ -18,7 +18,6 @@ def calculate_toll():
     data = request.get_json()
     vehicle_location = data.get('vehicle_location')  # GPS location of the vehicle
     toll_road_id = data.get('toll_road_id')  # Example: 'toll_1', 'toll_2'
-
     if toll_road_id not in toll_points:
         return jsonify({'error': 'Invalid toll road ID'}), 400
     
