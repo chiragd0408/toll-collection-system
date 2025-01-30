@@ -3,7 +3,6 @@ import json
 
 app = Flask(__name__)
 
-# Example: Mock database for toll collection points
 toll_points = {
     'toll_1': {'location': {'lat': 12.9716, 'long': 77.5946}, 'rate': 50},  # Example GPS coordinates (Bangalore)
     'toll_2': {'location': {'lat': 13.0827, 'long': 80.2707}, 'rate': 75}   # Example coordinates (Chennai)
