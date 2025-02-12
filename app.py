@@ -15,16 +15,14 @@ def home():
 @app.route('/calculate_toll', methods=['POST'])
 def calculate_toll():
     data = request.get_json()
-    vehicle_location = data.get('vehicle_location')  # GPS location of the vehicle
-    toll_road_id = data.get('toll_road_id')  # Example: 'toll_1', 'toll_2'
+    vehicle_location = data.get('vehicle_location')  
+    toll_road_id = data.get('toll_road_id')  
     if toll_road_id not in toll_points:
         return jsonify({'error': 'Invalid toll road ID'}), 400
     
     toll_info = toll_points[toll_road_id]
     toll_rate = toll_info['rate']
 
-    # Calculate toll here based on distance or logic as needed
-    # For now, just return the rate
     return jsonify({
         'toll_road_id': toll_road_id,
         'location': toll_info['location'],
